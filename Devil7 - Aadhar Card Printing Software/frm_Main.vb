@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.Pdf
+Imports DevExpress.XtraBars
 
 Public Class frm_Main
 
@@ -55,6 +56,41 @@ Public Class frm_Main
 
     Private Sub btn_About_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_About.ItemClick
         frm_About.ShowDialog()
+    End Sub
+
+    Private Sub btn_SaveAs_Image_JPEG_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_SaveAs_Image_JPEG.ItemClick
+        dlg_SaveImage.Filter = "JPEG Image Files (*.jpeg)|*.jpeg"
+        If dlg_SaveImage.ShowDialog = DialogResult.OK Then
+            view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Jpeg)
+        End If
+    End Sub
+
+    Private Sub btn_SaveAs_Image_PNG_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_SaveAs_Image_PNG.ItemClick
+        dlg_SaveImage.Filter = "PNG Image Files (*.png)|*.png"
+        If dlg_SaveImage.ShowDialog = DialogResult.OK Then
+            view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btn_SaveAs_Image_BMP_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_SaveAs_Image_BMP.ItemClick
+        dlg_SaveImage.Filter = "Bitmap Image Files (*.bmp)|*.bmp"
+        If dlg_SaveImage.ShowDialog = DialogResult.OK Then
+            view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Bmp)
+        End If
+    End Sub
+
+    Private Sub btn_SaveAs_Image_GIF_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_SaveAs_Image_GIF.ItemClick
+        dlg_SaveImage.Filter = "GIF Image Files (*.gif)|*.gif"
+        If dlg_SaveImage.ShowDialog = DialogResult.OK Then
+            view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Gif)
+        End If
+    End Sub
+
+    Private Sub btn_SaveAs_Image_TIFF_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_SaveAs_Image_TIFF.ItemClick
+        dlg_SaveImage.Filter = "TIFF Image Files (*.tiff)|*.tiff"
+        If dlg_SaveImage.ShowDialog = DialogResult.OK Then
+            view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Tiff)
+        End If
     End Sub
 #End Region
 

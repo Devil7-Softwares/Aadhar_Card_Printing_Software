@@ -42,25 +42,36 @@ Partial Class frm_Main
         Me.btn_Print_Card = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_FullCard = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Save = New DevExpress.XtraBars.BarButtonItem()
+        Me.Menu_SaveAs = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.btn_SaveAs_Image = New DevExpress.XtraBars.BarButtonItem()
+        Me.Menu_SaveAs_Image = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.btn_SaveAs_Image_JPEG = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_SaveAs_Image_PNG = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_SaveAs_Image_BMP = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Print = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rp_Misc = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.rpg_About = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.view_PDF = New DevExpress.XtraPdfViewer.PdfViewer()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
         Me.dlg_SaveEaadhar = New System.Windows.Forms.SaveFileDialog()
-        Me.rp_Misc = New DevExpress.XtraBars.Ribbon.RibbonPage()
-        Me.rpg_About = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
+        Me.dlg_SaveImage = New System.Windows.Forms.SaveFileDialog()
+        Me.btn_SaveAs_Image_GIF = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_SaveAs_Image_TIFF = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Menu_SaveAs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Menu_SaveAs_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 7
+        Me.RibbonControl.MaxItemId = 13
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -126,8 +137,11 @@ Partial Class frm_Main
         '
         'btn_Save
         '
+        Me.btn_Save.ActAsDropDown = True
         Me.btn_Save.AllowRightClickInMenu = False
+        Me.btn_Save.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.btn_Save.Caption = "Save"
+        Me.btn_Save.DropDownControl = Me.Menu_SaveAs
         Me.btn_Save.Id = 5
         Me.btn_Save.ImageOptions.SvgImage = CType(resources.GetObject("btn_Save.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Save.Name = "btn_Save"
@@ -137,6 +151,57 @@ Partial Class frm_Main
         SuperToolTip5.Items.Add(ToolTipTitleItem5)
         SuperToolTip5.Items.Add(ToolTipItem5)
         Me.btn_Save.SuperTip = SuperToolTip5
+        '
+        'Menu_SaveAs
+        '
+        Me.Menu_SaveAs.ItemLinks.Add(Me.btn_SaveAs_Image)
+        Me.Menu_SaveAs.Name = "Menu_SaveAs"
+        Me.Menu_SaveAs.Ribbon = Me.RibbonControl
+        '
+        'btn_SaveAs_Image
+        '
+        Me.btn_SaveAs_Image.ActAsDropDown = True
+        Me.btn_SaveAs_Image.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
+        Me.btn_SaveAs_Image.Caption = "Save As Image"
+        Me.btn_SaveAs_Image.DropDownControl = Me.Menu_SaveAs_Image
+        Me.btn_SaveAs_Image.Id = 7
+        Me.btn_SaveAs_Image.ImageOptions.SvgImage = CType(resources.GetObject("btn_SaveAs_Image.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_SaveAs_Image.Name = "btn_SaveAs_Image"
+        '
+        'Menu_SaveAs_Image
+        '
+        Me.Menu_SaveAs_Image.ItemLinks.Add(Me.btn_SaveAs_Image_JPEG)
+        Me.Menu_SaveAs_Image.ItemLinks.Add(Me.btn_SaveAs_Image_PNG)
+        Me.Menu_SaveAs_Image.ItemLinks.Add(Me.btn_SaveAs_Image_BMP)
+        Me.Menu_SaveAs_Image.ItemLinks.Add(Me.btn_SaveAs_Image_GIF)
+        Me.Menu_SaveAs_Image.ItemLinks.Add(Me.btn_SaveAs_Image_TIFF)
+        Me.Menu_SaveAs_Image.Name = "Menu_SaveAs_Image"
+        Me.Menu_SaveAs_Image.Ribbon = Me.RibbonControl
+        '
+        'btn_SaveAs_Image_JPEG
+        '
+        Me.btn_SaveAs_Image_JPEG.Caption = "JPEG"
+        Me.btn_SaveAs_Image_JPEG.Id = 8
+        Me.btn_SaveAs_Image_JPEG.Name = "btn_SaveAs_Image_JPEG"
+        '
+        'btn_SaveAs_Image_PNG
+        '
+        Me.btn_SaveAs_Image_PNG.Caption = "PNG"
+        Me.btn_SaveAs_Image_PNG.Id = 9
+        Me.btn_SaveAs_Image_PNG.Name = "btn_SaveAs_Image_PNG"
+        '
+        'btn_SaveAs_Image_BMP
+        '
+        Me.btn_SaveAs_Image_BMP.Caption = "BMP"
+        Me.btn_SaveAs_Image_BMP.Id = 10
+        Me.btn_SaveAs_Image_BMP.Name = "btn_SaveAs_Image_BMP"
+        '
+        'btn_About
+        '
+        Me.btn_About.Caption = "About"
+        Me.btn_About.Id = 6
+        Me.btn_About.ImageOptions.SvgImage = CType(resources.GetObject("btn_About.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_About.Name = "btn_About"
         '
         'rp_Home
         '
@@ -159,6 +224,19 @@ Partial Class frm_Main
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_FullCard)
         Me.rpg_Print.Name = "rpg_Print"
         Me.rpg_Print.Text = "Print"
+        '
+        'rp_Misc
+        '
+        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_About})
+        Me.rp_Misc.Name = "rp_Misc"
+        Me.rp_Misc.Text = "Misc"
+        '
+        'rpg_About
+        '
+        Me.rpg_About.ItemLinks.Add(Me.btn_About)
+        Me.rpg_About.Name = "rpg_About"
+        Me.rpg_About.ShowCaptionButton = False
+        Me.rpg_About.Text = "About && Support"
         '
         'RibbonStatusBar
         '
@@ -186,25 +264,17 @@ Partial Class frm_Main
         Me.dlg_SaveEaadhar.FileName = "*.pdf"
         Me.dlg_SaveEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
         '
-        'rp_Misc
+        'btn_SaveAs_Image_GIF
         '
-        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_About})
-        Me.rp_Misc.Name = "rp_Misc"
-        Me.rp_Misc.Text = "Misc"
+        Me.btn_SaveAs_Image_GIF.Caption = "GIF"
+        Me.btn_SaveAs_Image_GIF.Id = 11
+        Me.btn_SaveAs_Image_GIF.Name = "btn_SaveAs_Image_GIF"
         '
-        'rpg_About
+        'btn_SaveAs_Image_TIFF
         '
-        Me.rpg_About.ItemLinks.Add(Me.btn_About)
-        Me.rpg_About.Name = "rpg_About"
-        Me.rpg_About.ShowCaptionButton = False
-        Me.rpg_About.Text = "About && Support"
-        '
-        'btn_About
-        '
-        Me.btn_About.Caption = "About"
-        Me.btn_About.Id = 6
-        Me.btn_About.ImageOptions.SvgImage = CType(resources.GetObject("btn_About.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btn_About.Name = "btn_About"
+        Me.btn_SaveAs_Image_TIFF.Caption = "TIFF"
+        Me.btn_SaveAs_Image_TIFF.Id = 12
+        Me.btn_SaveAs_Image_TIFF.Name = "btn_SaveAs_Image_TIFF"
         '
         'frm_Main
         '
@@ -220,6 +290,8 @@ Partial Class frm_Main
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "Devil7 - Aadhar Card Printing Software"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Menu_SaveAs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Menu_SaveAs_Image, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,4 +313,13 @@ Partial Class frm_Main
     Friend WithEvents btn_About As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rp_Misc As DevExpress.XtraBars.Ribbon.RibbonPage
     Friend WithEvents rpg_About As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents Menu_SaveAs As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents btn_SaveAs_Image As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents Menu_SaveAs_Image As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents btn_SaveAs_Image_JPEG As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_SaveAs_Image_PNG As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_SaveAs_Image_BMP As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents dlg_SaveImage As SaveFileDialog
+    Friend WithEvents btn_SaveAs_Image_GIF As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_SaveAs_Image_TIFF As DevExpress.XtraBars.BarButtonItem
 End Class
