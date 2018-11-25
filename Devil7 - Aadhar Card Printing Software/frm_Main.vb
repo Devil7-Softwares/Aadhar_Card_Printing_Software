@@ -128,7 +128,15 @@ Public Class frm_Main
 
     Sub OpenFile(ByVal Filename As String)
         Try
-            view_PDF.LoadDocument(Filename)
+            Using Processor As New PdfDocumentProcessor
+                AddHandler Processor.PasswordRequested, AddressOf view_PDF_PasswordRequested
+                Processor.LoadDocument(Filename)
+                Processor.RemoveForm()
+                Using MS As New IO.MemoryStream
+                    Processor.SaveDocument(MS)
+                    view_PDF.LoadDocument(New IO.MemoryStream(MS.ToArray))
+                End Using
+            End Using
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
         End Try
