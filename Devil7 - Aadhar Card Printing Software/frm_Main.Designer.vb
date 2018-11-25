@@ -51,6 +51,7 @@ Partial Class frm_Main
         Me.btn_SaveAs_Image_GIF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_SaveAs_Image_TIFF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Feedback = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Print = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -69,16 +70,18 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF, Me.btn_Feedback})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 13
+        Me.RibbonControl.MaxItemId = 14
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowCategoryInCaption = False
         Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
+        Me.RibbonControl.ShowToolbarCustomizeItem = False
         Me.RibbonControl.Size = New System.Drawing.Size(667, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
+        Me.RibbonControl.Toolbar.ShowCustomizeItem = False
         '
         'btn_OpenPDF
         '
@@ -215,6 +218,13 @@ Partial Class frm_Main
         Me.btn_About.ImageOptions.SvgImage = CType(resources.GetObject("btn_About.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_About.Name = "btn_About"
         '
+        'btn_Feedback
+        '
+        Me.btn_Feedback.Caption = "Feedback / Support"
+        Me.btn_Feedback.Id = 13
+        Me.btn_Feedback.ImageOptions.SvgImage = CType(resources.GetObject("btn_Feedback.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Feedback.Name = "btn_Feedback"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_PDF, Me.rpg_Print})
@@ -247,6 +257,7 @@ Partial Class frm_Main
         'rpg_About
         '
         Me.rpg_About.ItemLinks.Add(Me.btn_About)
+        Me.rpg_About.ItemLinks.Add(Me.btn_Feedback)
         Me.rpg_About.Name = "rpg_About"
         Me.rpg_About.ShowCaptionButton = False
         Me.rpg_About.Text = "About && Support"
@@ -323,4 +334,5 @@ Partial Class frm_Main
     Friend WithEvents dlg_SaveImage As SaveFileDialog
     Friend WithEvents btn_SaveAs_Image_GIF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_SaveAs_Image_TIFF As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_Feedback As DevExpress.XtraBars.BarButtonItem
 End Class

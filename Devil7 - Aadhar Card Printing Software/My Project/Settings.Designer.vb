@@ -65,6 +65,30 @@ Namespace My
                 Me("Skin") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property OpenCount() As Integer
+            Get
+                Return CType(Me("OpenCount"),Integer)
+            End Get
+            Set
+                Me("OpenCount") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property FeedBackShown() As String
+            Get
+                Return CType(Me("FeedBackShown"),String)
+            End Get
+            Set
+                Me("FeedBackShown") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

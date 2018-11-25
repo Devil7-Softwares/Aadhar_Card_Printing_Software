@@ -77,6 +77,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -97,14 +104,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BigCardItem.vb" />
+    <Compile Include="Classes\Keys.vb" />
+    <Compile Include="Classes\PublicFunctions.vb" />
     <Compile Include="Classes\SmallCardItem.vb" />
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Classes\FeedBack.vb" />
     <Compile Include="Dialogs\frm_About.designer.vb">
       <DependentUpon>frm_About.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Feedback.designer.vb">
+      <DependentUpon>frm_Feedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Feedback.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dialogs\frm_Password.Designer.vb">
@@ -117,6 +133,13 @@
       <DependentUpon>frm_ReportViewer.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\frm_ReportViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classes\RestAPI.vb" />
+    <Compile Include="Dialogs\frm_Wait.designer.vb">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Wait.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Main.Designer.vb">
@@ -163,11 +186,17 @@
     <EmbeddedResource Include="Dialogs\frm_About.resx">
       <DependentUpon>frm_About.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Feedback.resx">
+      <DependentUpon>frm_Feedback.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_Password.resx">
       <DependentUpon>frm_Password.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_ReportViewer.resx">
       <DependentUpon>frm_ReportViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Wait.resx">
+      <DependentUpon>frm_Wait.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.vb</DependentUpon>
@@ -200,6 +229,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />

@@ -32,6 +32,20 @@ Public Class frm_Main
     Private Sub btn_OpenPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OpenPDF.ItemClick
         If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
             OpenFile(dlg_OpenEaadhar.FileName)
+
+            My.Settings.OpenCount += 1
+            My.Settings.Save()
+            If (My.Settings.OpenCount Mod 5) = 0 Then
+                If Not My.Settings.FeedBackShown Then
+                    Dim Result = MsgBox("Every single feedback from users mean a lot to us. Would you mind to spare a minute to write a feedback to us...?" & vbNewLine & vbNewLine & "Click 'No' to never show this dialog again.", MsgBoxStyle.Question + MsgBoxStyle.YesNoCancel, "Feedback")
+                    If Result = MsgBoxResult.Yes Then
+                        Invoke(Sub() btn_Feedback.PerformClick())
+                    ElseIf Result = MsgBoxResult.No Then
+                        My.Settings.FeedBackShown = True
+                        My.Settings.Save()
+                    End If
+                End If
+            End If
         End If
     End Sub
 
@@ -104,6 +118,13 @@ Public Class frm_Main
         If dlg_SaveImage.ShowDialog = DialogResult.OK Then
             view_PDF.CreateBitmap(1, 3506).Save(dlg_SaveImage.FileName, Imaging.ImageFormat.Tiff)
         End If
+    End Sub
+
+    Private Sub btn_Feedback_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_Feedback.ItemClick
+        Dim dlg As New frm_Feedback
+        dlg.ShowDialog()
+        My.Settings.FeedBackShown = True
+        My.Settings.Save()
     End Sub
 #End Region
 

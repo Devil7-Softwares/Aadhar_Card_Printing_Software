@@ -20,7 +20,7 @@
 
 #Region "Other Events"
     Private Sub txt_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_Password.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Windows.Forms.Keys.Enter Then
             btn_OK.PerformClick()
         End If
     End Sub
