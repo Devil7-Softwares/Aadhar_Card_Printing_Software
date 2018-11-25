@@ -32,12 +32,12 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Devil7___Aadhar_Card_Printing_Software.frm_Main
+            Me.MainForm = Global.Devil7.Tools.Aadhar.Printing.frm_Main
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateSplashScreen()
-            Me.SplashScreen = Global.Devil7___Aadhar_Card_Printing_Software.frm_Splash
+            Me.SplashScreen = Global.Devil7.Tools.Aadhar.Printing.frm_Splash
         End Sub
     End Class
 End Namespace

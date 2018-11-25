@@ -76,9 +76,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Devil7___Aadhar_Card_Printing_Software.My.MySettings
+        Friend ReadOnly Property Settings() As Global.Devil7.Tools.Aadhar.Printing.My.MySettings
             Get
-                Return Global.Devil7___Aadhar_Card_Printing_Software.My.MySettings.Default
+                Return Global.Devil7.Tools.Aadhar.Printing.My.MySettings.Default
             End Get
         End Property
     End Module
