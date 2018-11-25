@@ -27,7 +27,7 @@ Public Class frm_Main
 
     Private Sub btn_Print_Card_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_Card.ItemClick
         If view_PDF.IsDocumentOpened Then
-            Dim Full As Bitmap = view_PDF.CreateBitmap(1, 3506)
+            Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
             Dim Front As Bitmap = Full.Clone(New Rectangle(118, 1930, 1012, 672), Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 1930, 1012, 672), Full.PixelFormat)
             Dim dlg As New frm_ReportViewer(New SmallCard(New SmallCardItem(Front, Back)))
@@ -37,7 +37,7 @@ Public Class frm_Main
 
     Private Sub btn_Print_FullCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_FullCard.ItemClick
         If view_PDF.IsDocumentOpened Then
-            Dim Full As Bitmap = view_PDF.CreateBitmap(1, 3506)
+            Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
             Dim Front As Bitmap = Full.Clone(New Rectangle(118, 118, 1012, 2485), Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 118, 1012, 2485), Full.PixelFormat)
             Dim dlg As New frm_ReportViewer(New BigCard(New BigCardItem(Front, Back)))
@@ -58,6 +58,13 @@ Public Class frm_Main
 #End Region
 
 #Region "Subs"
+    Function PrepImage(ByVal Image As Bitmap) As Bitmap
+        Dim G As Graphics = Graphics.FromImage(Image)
+        G.FillRectangle(Brushes.White, New Rectangle(202, 758, 65, 710))
+        G.Dispose()
+        Return Image
+    End Function
+
     Sub OpenFile(ByVal Filename As String)
         Try
             Using Processor As New PdfDocumentProcessor
