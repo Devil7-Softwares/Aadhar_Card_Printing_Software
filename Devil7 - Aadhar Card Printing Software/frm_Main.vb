@@ -79,25 +79,7 @@ Public Class frm_Main
 
     Sub OpenFile(ByVal Filename As String)
         Try
-            Using Processor As New PdfDocumentProcessor
-                AddHandler Processor.PasswordRequested, AddressOf view_PDF_PasswordRequested
-                Processor.LoadDocument(Filename)
-                Processor.RemoveFormField("Signature1")
-
-                Dim encryptionOptions As PdfEncryptionOptions = New PdfEncryptionOptions()
-                encryptionOptions.PrintingPermissions = PdfDocumentPrintingPermissions.Allowed
-                encryptionOptions.DataExtractionPermissions = PdfDocumentDataExtractionPermissions.Allowed
-                encryptionOptions.ModificationPermissions = PdfDocumentModificationPermissions.Allowed
-                encryptionOptions.InteractivityPermissions = PdfDocumentInteractivityPermissions.Allowed
-                encryptionOptions.OwnerPasswordString = ""
-                encryptionOptions.UserPasswordString = ""
-
-                Using MS As New IO.MemoryStream
-                    Processor.SaveDocument(MS, New PdfSaveOptions With {.EncryptionOptions = encryptionOptions})
-                    If view_PDF.IsDocumentOpened Then view_PDF.CloseDocument()
-                    view_PDF.LoadDocument(MS)
-                End Using
-            End Using
+            view_PDF.LoadDocument(Filename)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
         End Try
