@@ -20,6 +20,21 @@ Partial Class frm_Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
+        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem4 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip5 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem5 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem5 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip6 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem6 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem6 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip7 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem7 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem7 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip8 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem8 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem8 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_Full = New DevExpress.XtraBars.BarButtonItem()
@@ -55,24 +70,43 @@ Partial Class frm_Main
         '
         'btn_OpenPDF
         '
-        Me.btn_OpenPDF.Caption = "Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EAadhar"
+        Me.btn_OpenPDF.Caption = "Open"
         Me.btn_OpenPDF.Id = 1
         Me.btn_OpenPDF.ImageOptions.SvgImage = CType(resources.GetObject("btn_OpenPDF.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_OpenPDF.Name = "btn_OpenPDF"
+        ToolTipTitleItem4.Text = "Open"
+        ToolTipItem4.LeftIndent = 6
+        ToolTipItem4.Text = "Open EAadhar PDF Downloaded from UIDAI Website"
+        SuperToolTip4.Items.Add(ToolTipTitleItem4)
+        SuperToolTip4.Items.Add(ToolTipItem4)
+        Me.btn_OpenPDF.SuperTip = SuperToolTip4
         '
         'btn_Print_Full
         '
-        Me.btn_Print_Full.Caption = "Full"
+        Me.btn_Print_Full.Caption = "Full Size"
         Me.btn_Print_Full.Id = 2
         Me.btn_Print_Full.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Full.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_Full.Name = "btn_Print_Full"
+        ToolTipTitleItem5.Text = "Full Size Print"
+        ToolTipItem5.LeftIndent = 6
+        ToolTipItem5.Text = "Print Full Page Aadhar In the Downloaded Format"
+        SuperToolTip5.Items.Add(ToolTipTitleItem5)
+        SuperToolTip5.Items.Add(ToolTipItem5)
+        Me.btn_Print_Full.SuperTip = SuperToolTip5
         '
         'btn_Print_Card
         '
-        Me.btn_Print_Card.Caption = "Card"
+        Me.btn_Print_Card.Caption = "Small Card" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(1 Sided)"
         Me.btn_Print_Card.Id = 3
         Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_Card.Name = "btn_Print_Card"
+        ToolTipTitleItem6.Text = "Small Card (1 Sided)"
+        ToolTipItem6.LeftIndent = 6
+        ToolTipItem6.Text = "Print in Small ID Card Size. Both Front & Back Sides of Aadhar will Be Printed in" &
+    " Same Page."
+        SuperToolTip6.Items.Add(ToolTipTitleItem6)
+        SuperToolTip6.Items.Add(ToolTipItem6)
+        Me.btn_Print_Card.SuperTip = SuperToolTip6
         '
         'btn_Print_FullCard
         '
@@ -80,13 +114,28 @@ Partial Class frm_Main
         Me.btn_Print_FullCard.Id = 4
         Me.btn_Print_FullCard.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_FullCard.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_FullCard.Name = "btn_Print_FullCard"
+        ToolTipTitleItem7.Text = "Full Card Print (2 Sided)"
+        ToolTipItem7.LeftIndent = 6
+        ToolTipItem7.Text = "Print Full Size Aadhar in Front & Back Format." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: You must set the followin" &
+    "g Custom Paper Size in your Printer Preferences & Enable two sided printing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+    "SIZE : 3.5"" x 8.25"""
+        SuperToolTip7.Items.Add(ToolTipTitleItem7)
+        SuperToolTip7.Items.Add(ToolTipItem7)
+        Me.btn_Print_FullCard.SuperTip = SuperToolTip7
         '
         'btn_Save
         '
+        Me.btn_Save.AllowRightClickInMenu = False
         Me.btn_Save.Caption = "Save"
         Me.btn_Save.Id = 5
         Me.btn_Save.ImageOptions.SvgImage = CType(resources.GetObject("btn_Save.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Save.Name = "btn_Save"
+        ToolTipTitleItem8.Text = "Save"
+        ToolTipItem8.LeftIndent = 6
+        ToolTipItem8.Text = "Save EAadhar PDF Without Encryption, Digital Sign Image  & Downloaded Date Time"
+        SuperToolTip8.Items.Add(ToolTipTitleItem8)
+        SuperToolTip8.Items.Add(ToolTipItem8)
+        Me.btn_Save.SuperTip = SuperToolTip8
         '
         'rp_Home
         '
@@ -100,7 +149,7 @@ Partial Class frm_Main
         Me.rpg_PDF.ItemLinks.Add(Me.btn_Save)
         Me.rpg_PDF.Name = "rpg_PDF"
         Me.rpg_PDF.ShowCaptionButton = False
-        Me.rpg_PDF.Text = "PDF"
+        Me.rpg_PDF.Text = "EAadhar PDF"
         '
         'rpg_Print
         '
