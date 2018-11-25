@@ -21,21 +21,21 @@ Partial Class frm_Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem3 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem4 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip5 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem5 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem5 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip6 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem6 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem6 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip7 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem7 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem7 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip8 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem8 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem8 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip9 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem9 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem9 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip10 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem10 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem10 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_Full = New DevExpress.XtraBars.BarButtonItem()
@@ -52,16 +52,19 @@ Partial Class frm_Main
         Me.btn_SaveAs_Image_TIFF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Feedback = New DevExpress.XtraBars.BarButtonItem()
+        Me.gallery_Skins = New DevExpress.XtraBars.SkinRibbonGalleryBarItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Print = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rp_Misc = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_About = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpg_Skin = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.view_PDF = New DevExpress.XtraPdfViewer.PdfViewer()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
         Me.dlg_SaveEaadhar = New System.Windows.Forms.SaveFileDialog()
         Me.dlg_SaveImage = New System.Windows.Forms.SaveFileDialog()
+        Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs_Image, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,9 +73,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF, Me.btn_Feedback})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF, Me.btn_Feedback, Me.gallery_Skins})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 14
+        Me.RibbonControl.MaxItemId = 15
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -89,12 +92,12 @@ Partial Class frm_Main
         Me.btn_OpenPDF.Id = 1
         Me.btn_OpenPDF.ImageOptions.SvgImage = CType(resources.GetObject("btn_OpenPDF.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_OpenPDF.Name = "btn_OpenPDF"
-        ToolTipTitleItem1.Text = "Open"
-        ToolTipItem1.LeftIndent = 6
-        ToolTipItem1.Text = "Open EAadhar PDF Downloaded from UIDAI Website"
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.btn_OpenPDF.SuperTip = SuperToolTip1
+        ToolTipTitleItem6.Text = "Open"
+        ToolTipItem6.LeftIndent = 6
+        ToolTipItem6.Text = "Open EAadhar PDF Downloaded from UIDAI Website"
+        SuperToolTip6.Items.Add(ToolTipTitleItem6)
+        SuperToolTip6.Items.Add(ToolTipItem6)
+        Me.btn_OpenPDF.SuperTip = SuperToolTip6
         '
         'btn_Print_Full
         '
@@ -102,12 +105,12 @@ Partial Class frm_Main
         Me.btn_Print_Full.Id = 2
         Me.btn_Print_Full.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Full.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_Full.Name = "btn_Print_Full"
-        ToolTipTitleItem2.Text = "Full Size Print"
-        ToolTipItem2.LeftIndent = 6
-        ToolTipItem2.Text = "Print Full Page Aadhar In the Downloaded Format"
-        SuperToolTip2.Items.Add(ToolTipTitleItem2)
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.btn_Print_Full.SuperTip = SuperToolTip2
+        ToolTipTitleItem7.Text = "Full Size Print"
+        ToolTipItem7.LeftIndent = 6
+        ToolTipItem7.Text = "Print Full Page Aadhar In the Downloaded Format"
+        SuperToolTip7.Items.Add(ToolTipTitleItem7)
+        SuperToolTip7.Items.Add(ToolTipItem7)
+        Me.btn_Print_Full.SuperTip = SuperToolTip7
         '
         'btn_Print_Card
         '
@@ -115,13 +118,13 @@ Partial Class frm_Main
         Me.btn_Print_Card.Id = 3
         Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_Card.Name = "btn_Print_Card"
-        ToolTipTitleItem3.Text = "Small Card (1 Sided)"
-        ToolTipItem3.LeftIndent = 6
-        ToolTipItem3.Text = "Print in Small ID Card Size. Both Front & Back Sides of Aadhar will Be Printed in" &
+        ToolTipTitleItem8.Text = "Small Card (1 Sided)"
+        ToolTipItem8.LeftIndent = 6
+        ToolTipItem8.Text = "Print in Small ID Card Size. Both Front & Back Sides of Aadhar will Be Printed in" &
     " Same Page."
-        SuperToolTip3.Items.Add(ToolTipTitleItem3)
-        SuperToolTip3.Items.Add(ToolTipItem3)
-        Me.btn_Print_Card.SuperTip = SuperToolTip3
+        SuperToolTip8.Items.Add(ToolTipTitleItem8)
+        SuperToolTip8.Items.Add(ToolTipItem8)
+        Me.btn_Print_Card.SuperTip = SuperToolTip8
         '
         'btn_Print_FullCard
         '
@@ -129,14 +132,14 @@ Partial Class frm_Main
         Me.btn_Print_FullCard.Id = 4
         Me.btn_Print_FullCard.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_FullCard.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_FullCard.Name = "btn_Print_FullCard"
-        ToolTipTitleItem4.Text = "Full Card Print (2 Sided)"
-        ToolTipItem4.LeftIndent = 6
-        ToolTipItem4.Text = "Print Full Size Aadhar in Front & Back Format." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: You must set the followin" &
+        ToolTipTitleItem9.Text = "Full Card Print (2 Sided)"
+        ToolTipItem9.LeftIndent = 6
+        ToolTipItem9.Text = "Print Full Size Aadhar in Front & Back Format." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: You must set the followin" &
     "g Custom Paper Size in your Printer Preferences & Enable two sided printing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
     "SIZE : 3.5"" x 8.25"""
-        SuperToolTip4.Items.Add(ToolTipTitleItem4)
-        SuperToolTip4.Items.Add(ToolTipItem4)
-        Me.btn_Print_FullCard.SuperTip = SuperToolTip4
+        SuperToolTip9.Items.Add(ToolTipTitleItem9)
+        SuperToolTip9.Items.Add(ToolTipItem9)
+        Me.btn_Print_FullCard.SuperTip = SuperToolTip9
         '
         'btn_Save
         '
@@ -148,12 +151,12 @@ Partial Class frm_Main
         Me.btn_Save.Id = 5
         Me.btn_Save.ImageOptions.SvgImage = CType(resources.GetObject("btn_Save.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Save.Name = "btn_Save"
-        ToolTipTitleItem5.Text = "Save"
-        ToolTipItem5.LeftIndent = 6
-        ToolTipItem5.Text = "Save EAadhar PDF Without Encryption, Digital Sign Image  & Downloaded Date Time"
-        SuperToolTip5.Items.Add(ToolTipTitleItem5)
-        SuperToolTip5.Items.Add(ToolTipItem5)
-        Me.btn_Save.SuperTip = SuperToolTip5
+        ToolTipTitleItem10.Text = "Save"
+        ToolTipItem10.LeftIndent = 6
+        ToolTipItem10.Text = "Save EAadhar PDF Without Encryption, Digital Sign Image  & Downloaded Date Time"
+        SuperToolTip10.Items.Add(ToolTipTitleItem10)
+        SuperToolTip10.Items.Add(ToolTipItem10)
+        Me.btn_Save.SuperTip = SuperToolTip10
         '
         'Menu_SaveAs
         '
@@ -225,6 +228,12 @@ Partial Class frm_Main
         Me.btn_Feedback.ImageOptions.SvgImage = CType(resources.GetObject("btn_Feedback.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Feedback.Name = "btn_Feedback"
         '
+        'gallery_Skins
+        '
+        Me.gallery_Skins.Caption = "SkinRibbonGalleryBarItem1"
+        Me.gallery_Skins.Id = 14
+        Me.gallery_Skins.Name = "gallery_Skins"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_PDF, Me.rpg_Print})
@@ -250,7 +259,7 @@ Partial Class frm_Main
         '
         'rp_Misc
         '
-        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_About})
+        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_About, Me.rpg_Skin})
         Me.rp_Misc.Name = "rp_Misc"
         Me.rp_Misc.Text = "Misc"
         '
@@ -261,6 +270,13 @@ Partial Class frm_Main
         Me.rpg_About.Name = "rpg_About"
         Me.rpg_About.ShowCaptionButton = False
         Me.rpg_About.Text = "About && Support"
+        '
+        'rpg_Skin
+        '
+        Me.rpg_Skin.ItemLinks.Add(Me.gallery_Skins)
+        Me.rpg_Skin.Name = "rpg_Skin"
+        Me.rpg_Skin.ShowCaptionButton = False
+        Me.rpg_Skin.Text = "Skin"
         '
         'RibbonStatusBar
         '
@@ -335,4 +351,7 @@ Partial Class frm_Main
     Friend WithEvents btn_SaveAs_Image_GIF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_SaveAs_Image_TIFF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_Feedback As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rpg_Skin As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents gallery_Skins As DevExpress.XtraBars.SkinRibbonGalleryBarItem
+    Friend WithEvents Theme As DevExpress.LookAndFeel.DefaultLookAndFeel
 End Class

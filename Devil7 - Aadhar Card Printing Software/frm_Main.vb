@@ -130,12 +130,28 @@ Public Class frm_Main
 
 #Region "Form Events"
     Private Sub frm_Main_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Try
+            If My.Settings.Skin <> "" Then
+                Theme.LookAndFeel.SetSkinStyle(My.Settings.Skin)
+            End If
+        Catch ex As Exception
+
+        End Try
         If My.Application.CommandLineArgs.Count > 0 Then
             Dim Filename As String = My.Application.CommandLineArgs(0)
             If My.Computer.FileSystem.FileExists(Filename) Then
                 OpenFile(Filename)
             End If
         End If
+    End Sub
+
+    Private Sub frm_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Try
+            My.Settings.Skin = Me.GetSkin.Name
+            My.Settings.Save()
+        Catch ex As Exception
+
+        End Try
     End Sub
 #End Region
 
