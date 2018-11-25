@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Devil7 - Aadhar Card Printing Software")>
-<Assembly: AssemblyDescription("Simple & Efficient Tool to Print EAadhar Downloaded from UIDAI")>
+<Assembly: AssemblyDescription("Simple & Efficient Tool to Print e-Aadhar Downloaded from UIDAI")>
 <Assembly: AssemblyCompany("Devil7 Softwares")>
 <Assembly: AssemblyProduct("Devil7 - Automation Tools")>
 <Assembly: AssemblyCopyright("Copyright © Devil7 Softwares 2018")>

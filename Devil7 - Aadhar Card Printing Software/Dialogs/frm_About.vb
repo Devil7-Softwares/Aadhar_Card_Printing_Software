@@ -35,10 +35,10 @@ Public Class frm_About
         lbl_ProjectTitle.Text = My.Application.Info.ProductName
         lbl_Email.Text = "devil7softwares@gmail.com"
 
-        SourceLink = "https://github.com/Devil7-Softwares/GSTR_2A-JSON_to_Excel_Converter"
+        SourceLink = "https://github.com/Devil7-Softwares/Aadhar_Card_Printing_Software"
         LicenseLink = "http://www.apache.org/licenses/LICENSE-2.0"
-        IssuesLink = "https://github.com/Devil7-Softwares/GSTR_2A-JSON_to_Excel_Converter/issues"
-        ReleasesLink = "https://github.com/Devil7-Softwares/GSTR_2A-JSON_to_Excel_Converter/releases"
+        IssuesLink = "https://github.com/Devil7-Softwares/Aadhar_Card_Printing_Software/issues"
+        ReleasesLink = "https://github.com/Devil7-Softwares/Aadhar_Card_Printing_Software/releases"
         WebsiteLink = "https://devil7softwares.github.io"
 
     End Sub

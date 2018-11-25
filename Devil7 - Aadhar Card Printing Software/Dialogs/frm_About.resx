@@ -271,7 +271,7 @@
 </value>
   </data>
   <data name="Label20.Text" xml:space="preserve">
-    <value>* This tool / developer of this tool have no connection with nor developed by 'GSTN - Goods And Services Tax Network' or any other government bodies.
+    <value>* This tool have no connection with nor developed by 'UIDAI' or any other government bodies.
 * This software is supplied "AS IS" without any warranties and support. Yet, you can report issues with proper logs/details steps to reproduce the issue in our issue tracker.</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

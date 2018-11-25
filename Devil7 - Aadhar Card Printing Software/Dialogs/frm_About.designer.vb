@@ -102,6 +102,8 @@ Partial Class frm_About
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.AutoSize = True
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114.0!))
@@ -146,7 +148,7 @@ Partial Class frm_About
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(509, 225)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(569, 225)
         Me.TableLayoutPanel1.TabIndex = 4
         '
         'Label4
@@ -320,7 +322,7 @@ Partial Class frm_About
         Me.lbl_Version.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Version.Location = New System.Drawing.Point(133, 0)
         Me.lbl_Version.Name = "lbl_Version"
-        Me.lbl_Version.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Version.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Version.TabIndex = 10
         Me.lbl_Version.Text = "-"
         Me.lbl_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -331,7 +333,7 @@ Partial Class frm_About
         Me.lbl_BuildDate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_BuildDate.Location = New System.Drawing.Point(133, 25)
         Me.lbl_BuildDate.Name = "lbl_BuildDate"
-        Me.lbl_BuildDate.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_BuildDate.Size = New System.Drawing.Size(433, 25)
         Me.lbl_BuildDate.TabIndex = 11
         Me.lbl_BuildDate.Text = "-"
         Me.lbl_BuildDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -342,7 +344,7 @@ Partial Class frm_About
         Me.lbl_Source.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Source.Location = New System.Drawing.Point(133, 125)
         Me.lbl_Source.Name = "lbl_Source"
-        Me.lbl_Source.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Source.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Source.TabIndex = 14
         Me.lbl_Source.TabStop = True
         Me.lbl_Source.Text = "View Source"
@@ -354,7 +356,7 @@ Partial Class frm_About
         Me.lbl_IssueTracker.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_IssueTracker.Location = New System.Drawing.Point(133, 150)
         Me.lbl_IssueTracker.Name = "lbl_IssueTracker"
-        Me.lbl_IssueTracker.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_IssueTracker.Size = New System.Drawing.Size(433, 25)
         Me.lbl_IssueTracker.TabIndex = 15
         Me.lbl_IssueTracker.TabStop = True
         Me.lbl_IssueTracker.Text = "Report Issues"
@@ -366,7 +368,7 @@ Partial Class frm_About
         Me.lbl_Website.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Website.Location = New System.Drawing.Point(133, 175)
         Me.lbl_Website.Name = "lbl_Website"
-        Me.lbl_Website.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Website.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Website.TabIndex = 16
         Me.lbl_Website.TabStop = True
         Me.lbl_Website.Text = "Official Site"
@@ -378,7 +380,7 @@ Partial Class frm_About
         Me.lbl_Downlods.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Downlods.Location = New System.Drawing.Point(133, 200)
         Me.lbl_Downlods.Name = "lbl_Downlods"
-        Me.lbl_Downlods.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Downlods.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Downlods.TabIndex = 17
         Me.lbl_Downlods.TabStop = True
         Me.lbl_Downlods.Text = "Github Releases"
@@ -390,7 +392,7 @@ Partial Class frm_About
         Me.lbl_License.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_License.Location = New System.Drawing.Point(133, 100)
         Me.lbl_License.Name = "lbl_License"
-        Me.lbl_License.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_License.Size = New System.Drawing.Size(433, 25)
         Me.lbl_License.TabIndex = 18
         Me.lbl_License.TabStop = True
         Me.lbl_License.Text = "Apache License 2.0"
@@ -424,7 +426,7 @@ Partial Class frm_About
         Me.lbl_Company.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Company.Location = New System.Drawing.Point(133, 50)
         Me.lbl_Company.Name = "lbl_Company"
-        Me.lbl_Company.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Company.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Company.TabIndex = 12
         Me.lbl_Company.Text = "-"
         Me.lbl_Company.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -446,7 +448,7 @@ Partial Class frm_About
         Me.lbl_Email.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lbl_Email.Location = New System.Drawing.Point(133, 75)
         Me.lbl_Email.Name = "lbl_Email"
-        Me.lbl_Email.Size = New System.Drawing.Size(373, 25)
+        Me.lbl_Email.Size = New System.Drawing.Size(433, 25)
         Me.lbl_Email.TabIndex = 20
         Me.lbl_Email.TabStop = True
         Me.lbl_Email.Text = "-"
@@ -454,20 +456,22 @@ Partial Class frm_About
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.Location = New System.Drawing.Point(12, 362)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(509, 29)
+        Me.Label3.Size = New System.Drawing.Size(569, 29)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Note : This application was a part of my automation tools project. For more tools" &
-"/info visit my site or github page."
+    "/info visit my site or github page."
         '
         'Label20
         '
-        Me.Label20.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label20.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label20.Location = New System.Drawing.Point(28, 441)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(493, 59)
+        Me.Label20.Size = New System.Drawing.Size(553, 59)
         Me.Label20.TabIndex = 6
         Me.Label20.Text = resources.GetString("Label20.Text")
         '
@@ -486,7 +490,7 @@ Partial Class frm_About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(533, 509)
+        Me.ClientSize = New System.Drawing.Size(593, 509)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label3)
