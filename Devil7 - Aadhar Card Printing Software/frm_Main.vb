@@ -9,7 +9,24 @@ Public Class frm_Main
 #Region "Button Events"
     Private Sub btn_OpenPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OpenPDF.ItemClick
         If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
-            view_PDF.LoadDocument(dlg_OpenEaadhar.FileName)
+            Using Processor As New PdfDocumentProcessor
+                AddHandler Processor.PasswordRequested, AddressOf view_PDF_PasswordRequested
+                Processor.LoadDocument(dlg_OpenEaadhar.FileName)
+                Processor.RemoveFormField("Signature1")
+
+                Dim encryptionOptions As PdfEncryptionOptions = New PdfEncryptionOptions()
+                encryptionOptions.PrintingPermissions = PdfDocumentPrintingPermissions.Allowed
+                encryptionOptions.DataExtractionPermissions = PdfDocumentDataExtractionPermissions.Allowed
+                encryptionOptions.ModificationPermissions = PdfDocumentModificationPermissions.Allowed
+                encryptionOptions.InteractivityPermissions = PdfDocumentInteractivityPermissions.Allowed
+                encryptionOptions.OwnerPasswordString = ""
+                encryptionOptions.UserPasswordString = ""
+
+                Using MS As New IO.MemoryStream
+                    Processor.SaveDocument(MS, New PdfSaveOptions With {.EncryptionOptions = encryptionOptions})
+                    view_PDF.LoadDocument(MS)
+                End Using
+            End Using
         End If
     End Sub
 
