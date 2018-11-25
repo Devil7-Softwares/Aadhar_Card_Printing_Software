@@ -74,7 +74,7 @@ Partial Public Class SmallCard
         '
         'ReportDataSource
         '
-        Me.ReportDataSource.DataSource = GetType(Devil7___Aadhar_Card_Printing_Software.SmallCardItem)
+        Me.ReportDataSource.DataSource = GetType(Devil7.Tools.Aadhar.Printing.SmallCardItem)
         Me.ReportDataSource.Name = "ReportDataSource"
         '
         'SmallCard

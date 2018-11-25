@@ -61,7 +61,7 @@ Partial Public Class BigCard
         'ReportDataSource
         '
         Me.ReportDataSource.DataMember = "Images"
-        Me.ReportDataSource.DataSource = GetType(Devil7___Aadhar_Card_Printing_Software.BigCardItem)
+        Me.ReportDataSource.DataSource = GetType(Devil7.Tools.Aadhar.Printing.BigCardItem)
         Me.ReportDataSource.Name = "ReportDataSource"
         '
         'BigCard
