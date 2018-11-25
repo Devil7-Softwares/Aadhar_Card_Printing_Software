@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Devil7 - Aadhar Card Printing Software")>
 <Assembly: AssemblyDescription("Simple & Efficient Tool to Print EAadhar Downloaded from UIDAI")>
 <Assembly: AssemblyCompany("Devil7 Softwares")>
-<Assembly: AssemblyProduct("Devil7 - Aadhar Card Printing Software")>
+<Assembly: AssemblyProduct("Devil7 - Automation Tools")>
 <Assembly: AssemblyCopyright("Copyright © Devil7 Softwares 2018")>
 <Assembly: AssemblyTrademark("")>
 

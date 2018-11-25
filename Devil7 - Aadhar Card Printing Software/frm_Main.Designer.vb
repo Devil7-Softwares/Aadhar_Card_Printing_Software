@@ -19,6 +19,7 @@ Partial Class frm_Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
@@ -48,17 +49,20 @@ Partial Class frm_Main
         Me.view_PDF = New DevExpress.XtraPdfViewer.PdfViewer()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
         Me.dlg_SaveEaadhar = New System.Windows.Forms.SaveFileDialog()
+        Me.rp_Misc = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.rpg_About = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 6
+        Me.RibbonControl.MaxItemId = 7
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
+        Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowCategoryInCaption = False
         Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -182,6 +186,26 @@ Partial Class frm_Main
         Me.dlg_SaveEaadhar.FileName = "*.pdf"
         Me.dlg_SaveEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
         '
+        'rp_Misc
+        '
+        Me.rp_Misc.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_About})
+        Me.rp_Misc.Name = "rp_Misc"
+        Me.rp_Misc.Text = "Misc"
+        '
+        'rpg_About
+        '
+        Me.rpg_About.ItemLinks.Add(Me.btn_About)
+        Me.rpg_About.Name = "rpg_About"
+        Me.rpg_About.ShowCaptionButton = False
+        Me.rpg_About.Text = "About && Support"
+        '
+        'btn_About
+        '
+        Me.btn_About.Caption = "About"
+        Me.btn_About.Id = 6
+        Me.btn_About.ImageOptions.SvgImage = CType(resources.GetObject("btn_About.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_About.Name = "btn_About"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -214,4 +238,7 @@ Partial Class frm_Main
     Friend WithEvents btn_Print_FullCard As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_Save As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents dlg_SaveEaadhar As SaveFileDialog
+    Friend WithEvents btn_About As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rp_Misc As DevExpress.XtraBars.Ribbon.RibbonPage
+    Friend WithEvents rpg_About As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
