@@ -23,6 +23,7 @@ Partial Class frm_Main
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_Full = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Print_Card = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.rpg_Print = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -31,7 +32,7 @@ Partial Class frm_Main
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.view_Print = New System.Windows.Forms.PrintPreviewControl()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
-        Me.btn_Print_Card = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Print_FullCard = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
@@ -40,9 +41,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 4
+        Me.RibbonControl.MaxItemId = 5
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
         Me.RibbonControl.ShowCategoryInCaption = False
@@ -64,6 +65,13 @@ Partial Class frm_Main
         Me.btn_Print_Full.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Full.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Print_Full.Name = "btn_Print_Full"
         '
+        'btn_Print_Card
+        '
+        Me.btn_Print_Card.Caption = "Card"
+        Me.btn_Print_Card.Id = 3
+        Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_Card.Name = "btn_Print_Card"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_PDF, Me.rpg_Print})
@@ -81,6 +89,7 @@ Partial Class frm_Main
         '
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Full)
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Card)
+        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_FullCard)
         Me.rpg_Print.Name = "rpg_Print"
         Me.rpg_Print.Text = "Print"
         '
@@ -128,12 +137,12 @@ Partial Class frm_Main
         Me.dlg_OpenEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
         Me.dlg_OpenEaadhar.FilterIndex = 0
         '
-        'btn_Print_Card
+        'btn_Print_FullCard
         '
-        Me.btn_Print_Card.Caption = "Card"
-        Me.btn_Print_Card.Id = 3
-        Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btn_Print_Card.Name = "btn_Print_Card"
+        Me.btn_Print_FullCard.Caption = "Full Card" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(2 Sided)"
+        Me.btn_Print_FullCard.Id = 4
+        Me.btn_Print_FullCard.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_FullCard.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_FullCard.Name = "btn_Print_FullCard"
         '
         'frm_Main
         '
@@ -167,4 +176,5 @@ Partial Class frm_Main
     Friend WithEvents btn_Print_Full As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpg_Print As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btn_Print_Card As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_Print_FullCard As DevExpress.XtraBars.BarButtonItem
 End Class

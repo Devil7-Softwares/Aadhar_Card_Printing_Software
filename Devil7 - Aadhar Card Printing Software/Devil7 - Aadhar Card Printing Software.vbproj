@@ -93,7 +93,8 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CardItem.vb" />
+    <Compile Include="Classes\BigCardItem.vb" />
+    <Compile Include="Classes\SmallCardItem.vb" />
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +131,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reports\BigCard.designer.vb">
+      <DependentUpon>BigCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BigCard.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\SmallCard.designer.vb">
       <DependentUpon>SmallCard.vb</DependentUpon>
     </Compile>
@@ -153,6 +160,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BigCard.resx">
+      <DependentUpon>BigCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SmallCard.resx">
       <DependentUpon>SmallCard.vb</DependentUpon>

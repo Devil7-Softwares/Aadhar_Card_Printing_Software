@@ -8,27 +8,31 @@ Public Class frm_Main
 
 #Region "Button Events"
     Private Sub btn_OpenPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OpenPDF.ItemClick
-        If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
-            Using Processor As New PdfDocumentProcessor
-                AddHandler Processor.PasswordRequested, AddressOf view_PDF_PasswordRequested
-                Processor.LoadDocument(dlg_OpenEaadhar.FileName)
-                Processor.RemoveFormField("Signature1")
+        Try
+            If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
+                Using Processor As New PdfDocumentProcessor
+                    AddHandler Processor.PasswordRequested, AddressOf view_PDF_PasswordRequested
+                    Processor.LoadDocument(dlg_OpenEaadhar.FileName)
+                    Processor.RemoveFormField("Signature1")
 
-                Dim encryptionOptions As PdfEncryptionOptions = New PdfEncryptionOptions()
-                encryptionOptions.PrintingPermissions = PdfDocumentPrintingPermissions.Allowed
-                encryptionOptions.DataExtractionPermissions = PdfDocumentDataExtractionPermissions.Allowed
-                encryptionOptions.ModificationPermissions = PdfDocumentModificationPermissions.Allowed
-                encryptionOptions.InteractivityPermissions = PdfDocumentInteractivityPermissions.Allowed
-                encryptionOptions.OwnerPasswordString = ""
-                encryptionOptions.UserPasswordString = ""
+                    Dim encryptionOptions As PdfEncryptionOptions = New PdfEncryptionOptions()
+                    encryptionOptions.PrintingPermissions = PdfDocumentPrintingPermissions.Allowed
+                    encryptionOptions.DataExtractionPermissions = PdfDocumentDataExtractionPermissions.Allowed
+                    encryptionOptions.ModificationPermissions = PdfDocumentModificationPermissions.Allowed
+                    encryptionOptions.InteractivityPermissions = PdfDocumentInteractivityPermissions.Allowed
+                    encryptionOptions.OwnerPasswordString = ""
+                    encryptionOptions.UserPasswordString = ""
 
-                Using MS As New IO.MemoryStream
-                    Processor.SaveDocument(MS, New PdfSaveOptions With {.EncryptionOptions = encryptionOptions})
-                    If view_PDF.IsDocumentOpened Then view_PDF.CloseDocument()
-                    view_PDF.LoadDocument(MS)
+                    Using MS As New IO.MemoryStream
+                        Processor.SaveDocument(MS, New PdfSaveOptions With {.EncryptionOptions = encryptionOptions})
+                        If view_PDF.IsDocumentOpened Then view_PDF.CloseDocument()
+                        view_PDF.LoadDocument(MS)
+                    End Using
                 End Using
-            End Using
-        End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+        End Try
     End Sub
 
     Private Sub view_PDF_PasswordRequested(sender As Object, e As PdfPasswordRequestedEventArgs) Handles view_PDF.PasswordRequested
@@ -46,9 +50,19 @@ Public Class frm_Main
     Private Sub btn_Print_Card_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_Card.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = view_PDF.CreateBitmap(1, 3506)
-            Dim Front As Bitmap = Full.Clone(New Rectangle(118, 1930, 1011, 672), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 1930, 1011, 672), Full.PixelFormat)
-            Dim dlg As New frm_ReportViewer(New SmallCard(New CardItem(Front, Back)))
+            Dim Front As Bitmap = Full.Clone(New Rectangle(118, 1930, 1012, 672), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 1930, 1012, 672), Full.PixelFormat)
+            Dim dlg As New frm_ReportViewer(New SmallCard(New SmallCardItem(Front, Back)))
+            dlg.Show()
+        End If
+    End Sub
+
+    Private Sub btn_Print_FullCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_FullCard.ItemClick
+        If view_PDF.IsDocumentOpened Then
+            Dim Full As Bitmap = view_PDF.CreateBitmap(1, 3506)
+            Dim Front As Bitmap = Full.Clone(New Rectangle(118, 118, 1012, 2485), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 118, 1012, 2485), Full.PixelFormat)
+            Dim dlg As New frm_ReportViewer(New BigCard(New BigCardItem(Front, Back)))
             dlg.Show()
         End If
     End Sub
