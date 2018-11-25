@@ -90,6 +90,14 @@ Public Class frm_Main
             MsgBox(ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
         End Try
     End Sub
+
+    Private Sub btn_Save_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Save.ItemClick
+        If view_PDF.IsDocumentOpened Then
+            If dlg_SaveEaadhar.ShowDialog = DialogResult.OK Then
+                view_PDF.SaveDocument(dlg_SaveEaadhar.FileName)
+            End If
+        End If
+    End Sub
 #End Region
 
 End Class
