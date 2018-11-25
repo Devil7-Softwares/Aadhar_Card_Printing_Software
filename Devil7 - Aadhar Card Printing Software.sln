@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Devil7 - Aadhar Card Printing Software", "Devil7 - Aadhar Card Printing Software\Devil7 - Aadhar Card Printing Software.vbproj", "{78185A3B-9BC5-4D73-8226-AD3327B471EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78185A3B-9BC5-4D73-8226-AD3327B471EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78185A3B-9BC5-4D73-8226-AD3327B471EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78185A3B-9BC5-4D73-8226-AD3327B471EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78185A3B-9BC5-4D73-8226-AD3327B471EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91833546-C552-4CD2-BEFB-3629957E2B63}
+	EndGlobalSection
+EndGlobal
