@@ -21,13 +21,15 @@ Partial Class frm_Main
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Print_Full = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpg_Print = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.view_PDF = New DevExpress.XtraPdfViewer.PdfViewer()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.view_Print = New System.Windows.Forms.PrintPreviewControl()
-        Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -37,9 +39,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 2
+        Me.RibbonControl.MaxItemId = 3
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
         Me.RibbonControl.ShowCategoryInCaption = False
@@ -47,9 +49,23 @@ Partial Class frm_Main
         Me.RibbonControl.Size = New System.Drawing.Size(667, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
+        'btn_OpenPDF
+        '
+        Me.btn_OpenPDF.Caption = "Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EAadhar"
+        Me.btn_OpenPDF.Id = 1
+        Me.btn_OpenPDF.ImageOptions.SvgImage = CType(resources.GetObject("btn_OpenPDF.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_OpenPDF.Name = "btn_OpenPDF"
+        '
+        'btn_Print_Full
+        '
+        Me.btn_Print_Full.Caption = "Full"
+        Me.btn_Print_Full.Id = 2
+        Me.btn_Print_Full.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Full.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_Full.Name = "btn_Print_Full"
+        '
         'rp_Home
         '
-        Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_PDF})
+        Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.rpg_PDF, Me.rpg_Print})
         Me.rp_Home.Name = "rp_Home"
         Me.rp_Home.Text = "Home"
         '
@@ -59,6 +75,12 @@ Partial Class frm_Main
         Me.rpg_PDF.Name = "rpg_PDF"
         Me.rpg_PDF.ShowCaptionButton = False
         Me.rpg_PDF.Text = "PDF"
+        '
+        'rpg_Print
+        '
+        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Full)
+        Me.rpg_Print.Name = "rpg_Print"
+        Me.rpg_Print.Text = "Print"
         '
         'RibbonStatusBar
         '
@@ -98,13 +120,6 @@ Partial Class frm_Main
         Me.view_Print.Size = New System.Drawing.Size(268, 275)
         Me.view_Print.TabIndex = 0
         '
-        'btn_OpenPDF
-        '
-        Me.btn_OpenPDF.Caption = "Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EAadhar"
-        Me.btn_OpenPDF.Id = 1
-        Me.btn_OpenPDF.ImageOptions.SvgImage = CType(resources.GetObject("btn_OpenPDF.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btn_OpenPDF.Name = "btn_OpenPDF"
-        '
         'dlg_OpenEaadhar
         '
         Me.dlg_OpenEaadhar.FileName = "*.pdf"
@@ -140,4 +155,6 @@ Partial Class frm_Main
     Friend WithEvents view_Print As PrintPreviewControl
     Friend WithEvents btn_OpenPDF As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents dlg_OpenEaadhar As OpenFileDialog
+    Friend WithEvents btn_Print_Full As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents rpg_Print As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

@@ -20,6 +20,10 @@ Public Class frm_Main
             e.PasswordString = dlg.Password
         End If
     End Sub
+
+    Private Sub btn_Print_Full_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_Full.ItemClick
+        If view_PDF.IsDocumentOpened Then view_PDF.Print()
+    End Sub
 #End Region
 
 End Class

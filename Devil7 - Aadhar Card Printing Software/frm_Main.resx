@@ -183,6 +183,30 @@
         CiAgPGcgLz4NCiAgPGcgLz4NCjwvc3ZnPgs=
 </value>
   </data>
+  <data name="btn_Print_Full.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v18.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE4LjEsIFZlcnNpb249MTguMS40
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAPcDAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCA1OCA1OCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iQ2FwYV8xIj4NCiAgPHBvbHlnb24gcG9pbnRzPSI0OSwzNSA0OSw1MiA1
+        Miw1MiA1Miw0OSA1OCw0OSA1OCwxNyAwLDE3IDAsNDkgNiw0OSA2LDUyIDksNTIgOSwzNSAiIGZpbGw9
+        IiNDN0NBQzciIC8+DQogIDxwb2x5Z29uIHBvaW50cz0iNTgsMzUgNTgsMTcgMCwxNyAwLDM1IDksMzUg
+        NDksMzUgIiBmaWxsPSIjNTU2MDgwIiAvPg0KICA8cmVjdCB4PSI2IiB5PSIzNSIgd2lkdGg9IjQ2IiBo
+        ZWlnaHQ9IjE3IiByeD0iMCIgcnk9IjAiIGZpbGw9IiM3MzgzQkYiIC8+DQogIDxwb2x5Z29uIHBvaW50
+        cz0iNDksMCA0OSw3IDQ5LDE3IDksMTcgOSwwICIgZmlsbD0iI0VERUFEQSIgLz4NCiAgPHBvbHlsaW5l
+        IHBvaW50cz0iNDksMzUgNDksNTggOSw1OCA5LDM1ICIgZmlsbD0iI0VERUFEQSIgLz4NCiAgPHBhdGgg
+        ZD0iTTQxLDQ0SDE3Yy0wLjU1MywwLTEtMC40NDctMS0xczAuNDQ3LTEsMS0xaDI0YzAuNTUzLDAsMSww
+        LjQ0NywxLDFTNDEuNTUzLDQ0LDQxLDQ0eiIgZmlsbD0iI0NFQzlBRSIgLz4NCiAgPHBhdGggZD0iTTQx
+        LDQ5SDE3Yy0wLjU1MywwLTEtMC40NDctMS0xczAuNDQ3LTEsMS0xaDI0YzAuNTUzLDAsMSwwLjQ0Nywx
+        LDFTNDEuNTUzLDQ5LDQxLDQ5eiIgZmlsbD0iI0NFQzlBRSIgLz4NCiAgPGNpcmNsZSBjeD0iNDkiIGN5
+        PSIyNiIgcj0iNCIgZmlsbD0iI0E0RTg2OSIgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAg
+        PGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4N
+        CiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCiAgPGcgLz4NCjwvc3ZnPgs=
+</value>
+  </data>
   <metadata name="dlg_OpenEaadhar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
