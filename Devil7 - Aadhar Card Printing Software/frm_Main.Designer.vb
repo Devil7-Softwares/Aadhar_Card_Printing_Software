@@ -31,6 +31,7 @@ Partial Class frm_Main
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.view_Print = New System.Windows.Forms.PrintPreviewControl()
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
+        Me.btn_Print_Card = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
@@ -39,9 +40,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 3
+        Me.RibbonControl.MaxItemId = 4
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home})
         Me.RibbonControl.ShowCategoryInCaption = False
@@ -79,6 +80,7 @@ Partial Class frm_Main
         'rpg_Print
         '
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Full)
+        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Card)
         Me.rpg_Print.Name = "rpg_Print"
         Me.rpg_Print.Text = "Print"
         '
@@ -126,6 +128,13 @@ Partial Class frm_Main
         Me.dlg_OpenEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
         Me.dlg_OpenEaadhar.FilterIndex = 0
         '
+        'btn_Print_Card
+        '
+        Me.btn_Print_Card.Caption = "Card"
+        Me.btn_Print_Card.Id = 3
+        Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_Card.Name = "btn_Print_Card"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -157,4 +166,5 @@ Partial Class frm_Main
     Friend WithEvents dlg_OpenEaadhar As OpenFileDialog
     Friend WithEvents btn_Print_Full As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpg_Print As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btn_Print_Card As DevExpress.XtraBars.BarButtonItem
 End Class
