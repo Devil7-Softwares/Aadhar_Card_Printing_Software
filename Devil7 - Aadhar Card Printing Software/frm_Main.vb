@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.Pdf
 Imports DevExpress.XtraBars
+Imports DevExpress.XtraPdfViewer
 
 Public Class frm_Main
 
@@ -7,10 +8,14 @@ Public Class frm_Main
     Private Password As String = ""
 #End Region
 
-#Region "Button Events"
-    Private Sub btn_OpenPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OpenPDF.ItemClick
-        If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
-            OpenFile(dlg_OpenEaadhar.FileName)
+#Region "Other Events"
+    Private Sub view_PDF_DocumentChanged(sender As Object, e As PdfDocumentChangedEventArgs) Handles view_PDF.DocumentChanged
+        If view_PDF.IsDocumentOpened Then
+            btn_Save.Enabled = True
+            rpg_Print.Enabled = True
+        Else
+            btn_Save.Enabled = False
+            rpg_Print.Enabled = False
         End If
     End Sub
 
@@ -19,6 +24,14 @@ Public Class frm_Main
         If dlg.ShowDialog = DialogResult.OK Then
             Password = dlg.Password
             e.PasswordString = dlg.Password
+        End If
+    End Sub
+#End Region
+
+#Region "Button Events"
+    Private Sub btn_OpenPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OpenPDF.ItemClick
+        If dlg_OpenEaadhar.ShowDialog = DialogResult.OK Then
+            OpenFile(dlg_OpenEaadhar.FileName)
         End If
     End Sub
 

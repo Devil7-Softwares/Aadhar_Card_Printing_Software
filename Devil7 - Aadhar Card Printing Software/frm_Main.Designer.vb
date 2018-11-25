@@ -48,6 +48,8 @@ Partial Class frm_Main
         Me.btn_SaveAs_Image_JPEG = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_SaveAs_Image_PNG = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_SaveAs_Image_BMP = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_SaveAs_Image_GIF = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_SaveAs_Image_TIFF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_About = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.rpg_PDF = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -59,8 +61,6 @@ Partial Class frm_Main
         Me.dlg_OpenEaadhar = New System.Windows.Forms.OpenFileDialog()
         Me.dlg_SaveEaadhar = New System.Windows.Forms.SaveFileDialog()
         Me.dlg_SaveImage = New System.Windows.Forms.SaveFileDialog()
-        Me.btn_SaveAs_Image_GIF = New DevExpress.XtraBars.BarButtonItem()
-        Me.btn_SaveAs_Image_TIFF = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs_Image, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -137,11 +137,11 @@ Partial Class frm_Main
         '
         'btn_Save
         '
-        Me.btn_Save.ActAsDropDown = True
         Me.btn_Save.AllowRightClickInMenu = False
         Me.btn_Save.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown
         Me.btn_Save.Caption = "Save"
         Me.btn_Save.DropDownControl = Me.Menu_SaveAs
+        Me.btn_Save.Enabled = False
         Me.btn_Save.Id = 5
         Me.btn_Save.ImageOptions.SvgImage = CType(resources.GetObject("btn_Save.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.btn_Save.Name = "btn_Save"
@@ -196,6 +196,18 @@ Partial Class frm_Main
         Me.btn_SaveAs_Image_BMP.Id = 10
         Me.btn_SaveAs_Image_BMP.Name = "btn_SaveAs_Image_BMP"
         '
+        'btn_SaveAs_Image_GIF
+        '
+        Me.btn_SaveAs_Image_GIF.Caption = "GIF"
+        Me.btn_SaveAs_Image_GIF.Id = 11
+        Me.btn_SaveAs_Image_GIF.Name = "btn_SaveAs_Image_GIF"
+        '
+        'btn_SaveAs_Image_TIFF
+        '
+        Me.btn_SaveAs_Image_TIFF.Caption = "TIFF"
+        Me.btn_SaveAs_Image_TIFF.Id = 12
+        Me.btn_SaveAs_Image_TIFF.Name = "btn_SaveAs_Image_TIFF"
+        '
         'btn_About
         '
         Me.btn_About.Caption = "About"
@@ -219,6 +231,7 @@ Partial Class frm_Main
         '
         'rpg_Print
         '
+        Me.rpg_Print.Enabled = False
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Full)
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Card)
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_FullCard)
@@ -263,18 +276,6 @@ Partial Class frm_Main
         '
         Me.dlg_SaveEaadhar.FileName = "*.pdf"
         Me.dlg_SaveEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
-        '
-        'btn_SaveAs_Image_GIF
-        '
-        Me.btn_SaveAs_Image_GIF.Caption = "GIF"
-        Me.btn_SaveAs_Image_GIF.Id = 11
-        Me.btn_SaveAs_Image_GIF.Name = "btn_SaveAs_Image_GIF"
-        '
-        'btn_SaveAs_Image_TIFF
-        '
-        Me.btn_SaveAs_Image_TIFF.Caption = "TIFF"
-        Me.btn_SaveAs_Image_TIFF.Id = 12
-        Me.btn_SaveAs_Image_TIFF.Name = "btn_SaveAs_Image_TIFF"
         '
         'frm_Main
         '
