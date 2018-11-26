@@ -80,10 +80,10 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property FeedBackShown() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property FeedBackShown() As Boolean
             Get
-                Return CType(Me("FeedBackShown"),String)
+                Return CType(Me("FeedBackShown"),Boolean)
             End Get
             Set
                 Me("FeedBackShown") = value
