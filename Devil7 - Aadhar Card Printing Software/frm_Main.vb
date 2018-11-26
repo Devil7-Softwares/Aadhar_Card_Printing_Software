@@ -56,8 +56,9 @@ Public Class frm_Main
     Private Sub btn_Print_Card_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_Card.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
-            Dim Front As Bitmap = Full.Clone(New Rectangle(118, 1930, 1012, 672), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 1930, 1012, 672), Full.PixelFormat)
+            Dim Point As Point = GetTopLeftCorner(Full)
+            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
             Dim dlg As New frm_ReportViewer(New SmallCard(New SmallCardItem(Front, Back)))
             dlg.Show()
         End If
@@ -66,8 +67,9 @@ Public Class frm_Main
     Private Sub btn_Print_FullCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_FullCard.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
-            Dim Front As Bitmap = Full.Clone(New Rectangle(118, 118, 1012, 2485), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(1156, 118, 1012, 2485), Full.PixelFormat)
+            Dim Point As Point = GetTopLeftCorner(Full)
+            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y, 1012, 2485), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y, 1012, 2485), Full.PixelFormat)
             Dim dlg As New frm_ReportViewer(New BigCard(New BigCardItem(Front, Back)))
             dlg.Show()
         End If
@@ -161,6 +163,15 @@ Public Class frm_Main
         G.FillRectangle(Brushes.White, New Rectangle(202, 758, 65, 710))
         G.Dispose()
         Return Image
+    End Function
+
+    Function GetTopLeftCorner(ByVal Image As Bitmap) As Point
+        For x As Integer = 10 To 250
+            For y As Integer = 10 To 250
+                If Image.GetPixel(x, y).ToArgb = -16777216 Then Return New Point(x, y)
+            Next
+        Next
+        Return New Point(0, 0)
     End Function
 
     Sub OpenFile(ByVal Filename As String)
