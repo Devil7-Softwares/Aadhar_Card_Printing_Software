@@ -160,7 +160,8 @@ Public Class frm_Main
 #Region "Subs"
     Function PrepImage(ByVal Image As Bitmap) As Bitmap
         Dim G As Graphics = Graphics.FromImage(Image)
-        G.FillRectangle(Brushes.White, New Rectangle(202, 758, 65, 710))
+        Dim Color As Color = Image.GetPixel(202, 758)
+        G.FillRectangle(New SolidBrush(Color), New Rectangle(202, 758, 65, 710))
         G.Dispose()
         Return Image
     End Function
