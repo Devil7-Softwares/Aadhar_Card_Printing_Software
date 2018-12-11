@@ -21,7 +21,7 @@
 Imports System.Drawing.Printing
 Imports DevExpress.XtraPrinting
 
-Public Class BigCard
+Public Class SmallCardD
 
 #Region "Subs"
     Public Sub New(ByVal Item As DoubleSideItem)

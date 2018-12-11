@@ -1,4 +1,4 @@
-﻿Public Class BigCardItem
+﻿Public Class DoubleSideItem
 
 #Region "Properties/Fields"
     ReadOnly Property Images As List(Of ImageWrapper)

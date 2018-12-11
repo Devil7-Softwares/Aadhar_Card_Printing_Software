@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Public Class BigCard
+Partial Public Class SmallCardD
     Inherits DevExpress.XtraReports.UI.XtraReport
 
     'XtraReport overrides dispose to clean up the component list.
@@ -19,11 +19,12 @@ Partial Public Class BigCard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
-        Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
-        Me.ReportDataSource = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource()
+        Me.ReportDataSource = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         CType(Me.ReportDataSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -35,9 +36,17 @@ Partial Public Class BigCard
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
+        'XrPictureBox1
+        '
+        Me.XrPictureBox1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Image", "[Image]")})
+        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.XrPictureBox1.Name = "XrPictureBox1"
+        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(320.0!, 213.0!)
+        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
+        '
         'TopMargin
         '
-        Me.TopMargin.HeightF = 7.0!
+        Me.TopMargin.HeightF = 15.0!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.TopMargin.StylePriority.UseTextAlignment = False
@@ -45,18 +54,10 @@ Partial Public Class BigCard
         '
         'BottomMargin
         '
-        Me.BottomMargin.HeightF = 8.0!
+        Me.BottomMargin.HeightF = 15.0!
         Me.BottomMargin.Name = "BottomMargin"
         Me.BottomMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
-        '
-        'XrPictureBox1
-        '
-        Me.XrPictureBox1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Image", "[Image]")})
-        Me.XrPictureBox1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
-        Me.XrPictureBox1.Name = "XrPictureBox1"
-        Me.XrPictureBox1.SizeF = New System.Drawing.SizeF(320.0!, 810.0!)
-        Me.XrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage
         '
         'ReportDataSource
         '
@@ -64,14 +65,14 @@ Partial Public Class BigCard
         Me.ReportDataSource.DataSource = GetType(Devil7.Tools.Aadhar.Printing.DoubleSideItem)
         Me.ReportDataSource.Name = "ReportDataSource"
         '
-        'BigCard
+        'SmallCardD
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail, Me.TopMargin, Me.BottomMargin})
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.ReportDataSource})
         Me.DataSource = Me.ReportDataSource
         Me.Font = New System.Drawing.Font("Trebuchet MS", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margins = New System.Drawing.Printing.Margins(15, 15, 7, 8)
-        Me.PageHeight = 825
+        Me.Margins = New System.Drawing.Printing.Margins(15, 15, 15, 15)
+        Me.PageHeight = 500
         Me.PageWidth = 350
         Me.PaperKind = System.Drawing.Printing.PaperKind.Custom
         Me.Version = "18.1"

@@ -39,7 +39,7 @@ Partial Class frm_Main
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btn_OpenPDF = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_Full = New DevExpress.XtraBars.BarButtonItem()
-        Me.btn_Print_Card = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Print_CardS = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Print_FullCard = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Save = New DevExpress.XtraBars.BarButtonItem()
         Me.Menu_SaveAs = New DevExpress.XtraBars.PopupMenu(Me.components)
@@ -65,6 +65,7 @@ Partial Class frm_Main
         Me.dlg_SaveEaadhar = New System.Windows.Forms.SaveFileDialog()
         Me.dlg_SaveImage = New System.Windows.Forms.SaveFileDialog()
         Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.btn_Print_CardD = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_SaveAs_Image, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,9 +74,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_Card, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF, Me.btn_Feedback, Me.gallery_Skins})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_OpenPDF, Me.btn_Print_Full, Me.btn_Print_CardS, Me.btn_Print_FullCard, Me.btn_Save, Me.btn_About, Me.btn_SaveAs_Image, Me.btn_SaveAs_Image_JPEG, Me.btn_SaveAs_Image_PNG, Me.btn_SaveAs_Image_BMP, Me.btn_SaveAs_Image_GIF, Me.btn_SaveAs_Image_TIFF, Me.btn_Feedback, Me.gallery_Skins, Me.btn_Print_CardD})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 15
+        Me.RibbonControl.MaxItemId = 16
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.rp_Misc})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -112,19 +113,19 @@ Partial Class frm_Main
         SuperToolTip7.Items.Add(ToolTipItem7)
         Me.btn_Print_Full.SuperTip = SuperToolTip7
         '
-        'btn_Print_Card
+        'btn_Print_CardS
         '
-        Me.btn_Print_Card.Caption = "Small Card" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(1 Sided)"
-        Me.btn_Print_Card.Id = 3
-        Me.btn_Print_Card.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_Card.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.btn_Print_Card.Name = "btn_Print_Card"
+        Me.btn_Print_CardS.Caption = "Small Card" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(1 Sided)"
+        Me.btn_Print_CardS.Id = 3
+        Me.btn_Print_CardS.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_CardS.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_CardS.Name = "btn_Print_CardS"
         ToolTipTitleItem8.Text = "Small Card (1 Sided)"
         ToolTipItem8.LeftIndent = 6
         ToolTipItem8.Text = "Print in Small ID Card Size. Both Front & Back Sides of Aadhar will Be Printed in" &
     " Same Page."
         SuperToolTip8.Items.Add(ToolTipTitleItem8)
         SuperToolTip8.Items.Add(ToolTipItem8)
-        Me.btn_Print_Card.SuperTip = SuperToolTip8
+        Me.btn_Print_CardS.SuperTip = SuperToolTip8
         '
         'btn_Print_FullCard
         '
@@ -252,7 +253,8 @@ Partial Class frm_Main
         '
         Me.rpg_Print.Enabled = False
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Full)
-        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_Card)
+        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_CardS)
+        Me.rpg_Print.ItemLinks.Add(Me.btn_Print_CardD)
         Me.rpg_Print.ItemLinks.Add(Me.btn_Print_FullCard)
         Me.rpg_Print.Name = "rpg_Print"
         Me.rpg_Print.Text = "Print"
@@ -304,6 +306,13 @@ Partial Class frm_Main
         Me.dlg_SaveEaadhar.FileName = "*.pdf"
         Me.dlg_SaveEaadhar.Filter = "Adobe Portable Document Files (*.pdf)|*.pdf"
         '
+        'btn_Print_CardD
+        '
+        Me.btn_Print_CardD.Caption = "Small Card" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(2 Sided)"
+        Me.btn_Print_CardD.Id = 15
+        Me.btn_Print_CardD.ImageOptions.SvgImage = CType(resources.GetObject("btn_Print_CardD.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.btn_Print_CardD.Name = "btn_Print_CardD"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -334,7 +343,7 @@ Partial Class frm_Main
     Friend WithEvents dlg_OpenEaadhar As OpenFileDialog
     Friend WithEvents btn_Print_Full As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents rpg_Print As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents btn_Print_Card As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents btn_Print_CardS As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_Print_FullCard As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_Save As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents dlg_SaveEaadhar As SaveFileDialog
@@ -354,4 +363,5 @@ Partial Class frm_Main
     Friend WithEvents rpg_Skin As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents gallery_Skins As DevExpress.XtraBars.SkinRibbonGalleryBarItem
     Friend WithEvents Theme As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents btn_Print_CardD As DevExpress.XtraBars.BarButtonItem
 End Class

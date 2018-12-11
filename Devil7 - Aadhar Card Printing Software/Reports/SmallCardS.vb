@@ -21,10 +21,10 @@
 Imports System.Drawing.Printing
 Imports DevExpress.XtraPrinting
 
-Public Class SmallCard
+Public Class SmallCardS
 
 #Region "Subs"
-    Public Sub New(ByVal Item As SmallCardItem)
+    Public Sub New(ByVal Item As SingleSideItem)
         InitializeComponent()
         AddHandler PrintingSystem.PageSettingsChanged, AddressOf Redraw
         AddHandler PrintingSystem.AfterMarginsChange, AddressOf Redraw

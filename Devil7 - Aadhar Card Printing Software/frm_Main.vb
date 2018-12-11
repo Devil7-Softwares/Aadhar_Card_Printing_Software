@@ -53,13 +53,13 @@ Public Class frm_Main
         If view_PDF.IsDocumentOpened Then view_PDF.Print()
     End Sub
 
-    Private Sub btn_Print_Card_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_Card.ItemClick
+    Private Sub btn_Print_CardS_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_CardS.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
             Dim Point As Point = GetTopLeftCorner(Full)
             Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
-            Dim dlg As New frm_ReportViewer(New SmallCard(New SmallCardItem(Front, Back)))
+            Dim dlg As New frm_ReportViewer(New SmallCardS(New SingleSideItem(Front, Back)))
             dlg.Show()
         End If
     End Sub
@@ -78,7 +78,7 @@ Public Class frm_Main
 
             Dim Front As Bitmap = Full.Clone(Rect_Front, Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(Rect_Back, Full.PixelFormat)
-            Dim dlg As New frm_ReportViewer(New BigCard(New BigCardItem(Front, Back)))
+            Dim dlg As New frm_ReportViewer(New BigCard(New DoubleSideItem(Front, Back)))
             dlg.Show()
         End If
     End Sub
@@ -135,6 +135,18 @@ Public Class frm_Main
         dlg.ShowDialog()
         My.Settings.FeedBackShown = True
         My.Settings.Save()
+    End Sub
+
+    Private Sub btn_Print_CardD_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_Print_CardD.ItemClick
+        If view_PDF.IsDocumentOpened Then
+            Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
+            Dim Point As Point = GetTopLeftCorner(Full)
+            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            DrawTopLine({Front, Back})
+            Dim dlg As New frm_ReportViewer(New SmallCardD(New DoubleSideItem(Front, Back)))
+            dlg.Show()
+        End If
     End Sub
 #End Region
 
@@ -206,6 +218,16 @@ Public Class frm_Main
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
         End Try
+    End Sub
+
+    Private Sub DrawTopLine(ByVal Images As Bitmap())
+        Dim Width As Single = 5
+
+        For Each i As Bitmap In Images
+            Using G As Graphics = Graphics.FromImage(i)
+                G.DrawLine(New Pen(Brushes.Black, Width), New Point(0, (Width / 2)), New Point(i.Width, (Width / 2)))
+            End Using
+        Next
     End Sub
 #End Region
 

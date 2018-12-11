@@ -1,4 +1,4 @@
-﻿Public Class SmallCardItem
+﻿Public Class SingleSideItem
 
 #Region "Fields/Properties"
     ReadOnly Property Front As Bitmap

@@ -103,10 +103,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BigCardItem.vb" />
+    <Compile Include="Classes\DoubleSideItem.vb" />
     <Compile Include="Classes\Keys.vb" />
     <Compile Include="Classes\PublicFunctions.vb" />
-    <Compile Include="Classes\SmallCardItem.vb" />
+    <Compile Include="Classes\SingleSideItem.vb" />
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -169,16 +169,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Reports\SmallCardD.designer.vb">
+      <DependentUpon>SmallCardD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SmallCardD.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\BigCard.designer.vb">
       <DependentUpon>BigCard.vb</DependentUpon>
     </Compile>
     <Compile Include="Reports\BigCard.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\SmallCard.designer.vb">
-      <DependentUpon>SmallCard.vb</DependentUpon>
+    <Compile Include="Reports\SmallCardS.designer.vb">
+      <DependentUpon>SmallCardS.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reports\SmallCard.vb">
+    <Compile Include="Reports\SmallCardS.vb">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -211,11 +217,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SmallCardD.resx">
+      <DependentUpon>SmallCardD.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\BigCard.resx">
       <DependentUpon>BigCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\SmallCard.resx">
-      <DependentUpon>SmallCard.vb</DependentUpon>
+    <EmbeddedResource Include="Reports\SmallCardS.resx">
+      <DependentUpon>SmallCardS.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

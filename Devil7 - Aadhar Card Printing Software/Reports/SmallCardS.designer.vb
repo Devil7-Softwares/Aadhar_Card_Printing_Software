@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Public Class SmallCard
+Partial Public Class SmallCardS
     Inherits DevExpress.XtraReports.UI.XtraReport
 
     'XtraReport overrides dispose to clean up the component list.
@@ -74,7 +74,7 @@ Partial Public Class SmallCard
         '
         'ReportDataSource
         '
-        Me.ReportDataSource.DataSource = GetType(Devil7.Tools.Aadhar.Printing.SmallCardItem)
+        Me.ReportDataSource.DataSource = GetType(Devil7.Tools.Aadhar.Printing.SingleSideItem)
         Me.ReportDataSource.Name = "ReportDataSource"
         '
         'SmallCard
