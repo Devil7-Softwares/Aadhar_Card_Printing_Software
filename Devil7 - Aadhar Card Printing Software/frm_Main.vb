@@ -67,9 +67,17 @@ Public Class frm_Main
     Private Sub btn_Print_FullCard_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_FullCard.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
-            Dim Point As Point = GetTopLeftCorner(Full)
-            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y, 1012, 2485), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y, 1012, 2485), Full.PixelFormat)
+
+            Dim Point_Top As Point = GetTopLeftCorner(Full)
+            Dim Point_Bottom As Point = GetBottomLeftCorner(Full)
+            Dim Height As Single = Point_Bottom.Y - Point_Top.Y
+            Dim Width As Single = 1012
+            Dim Size As New Size(Width, Height)
+            Dim Rect_Front As New Rectangle(Point_Top, Size)
+            Dim Rect_Back As New Rectangle(New Point(Point_Top.X + 1038, Point_Top.Y), Size)
+
+            Dim Front As Bitmap = Full.Clone(Rect_Front, Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(Rect_Back, Full.PixelFormat)
             Dim dlg As New frm_ReportViewer(New BigCard(New BigCardItem(Front, Back)))
             dlg.Show()
         End If
@@ -169,6 +177,15 @@ Public Class frm_Main
     Function GetTopLeftCorner(ByVal Image As Bitmap) As Point
         For x As Integer = 10 To 250
             For y As Integer = 10 To 250
+                If Image.GetPixel(x, y).ToArgb = -16777216 Then Return New Point(x, y)
+            Next
+        Next
+        Return New Point(0, 0)
+    End Function
+
+    Function GetBottomLeftCorner(ByVal Image As Bitmap) As Point
+        For x As Integer = 10 To 250
+            For y As Integer = Image.Height - 1 To 500 Step -1
                 If Image.GetPixel(x, y).ToArgb = -16777216 Then Return New Point(x, y)
             Next
         Next
