@@ -59,6 +59,7 @@ Public Class frm_Main
             Dim Point As Point = GetTopLeftCorner(Full)
             Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            PrepImage({Front, Back})
             Dim dlg As New frm_ReportViewer(New SmallCardS(New SingleSideItem(Front, Back)))
             dlg.Show()
         End If
@@ -143,7 +144,7 @@ Public Class frm_Main
             Dim Point As Point = GetTopLeftCorner(Full)
             Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
-            DrawTopLine({Front, Back})
+            PrepImage({Front, Back})
             Dim dlg As New frm_ReportViewer(New SmallCardD(New DoubleSideItem(Front, Back)))
             dlg.Show()
         End If
@@ -220,11 +221,12 @@ Public Class frm_Main
         End Try
     End Sub
 
-    Private Sub DrawTopLine(ByVal Images As Bitmap())
+    Private Sub PrepImage(ByVal Images As Bitmap())
         Dim Width As Single = 5
 
         For Each i As Bitmap In Images
             Using G As Graphics = Graphics.FromImage(i)
+                G.FillRectangle(Brushes.White, 7, 0, i.Width - 14, 10)
                 G.DrawLine(New Pen(Brushes.Black, Width), New Point(0, (Width / 2)), New Point(i.Width, (Width / 2)))
             End Using
         Next
