@@ -182,15 +182,15 @@ Public Class frm_Main
     Function PrepImage(ByVal Image As Bitmap) As Bitmap
         Dim G As Graphics = Graphics.FromImage(Image)
         Dim Color As Color = Image.GetPixel(202, 758)
-        G.FillRectangle(New SolidBrush(Color), New Rectangle(202, 758, 65, 710))
+        G.FillRectangle(New SolidBrush(Color), New Rectangle(202, 1010, 65, 710))
         G.Dispose()
         Return Image
     End Function
 
     Function GetTopLeftCorner(ByVal Image As Bitmap) As Point
         For x As Integer = 10 To 250
-            For y As Integer = 10 To 250
-                If Image.GetPixel(x, y).ToArgb = -16777216 Then Return New Point(x, y)
+            For y As Integer = 10 To 400
+                If Image.GetPixel(x, y).ToArgb = -11316397 Then Return New Point(x, y)
             Next
         Next
         Return New Point(0, 0)
