@@ -6,6 +6,10 @@ Public Class frm_Main
 
 #Region "Variables"
     Private Password As String = ""
+
+    Private Const AadharPerSideWidth As Integer = 1091
+    Private Const AadharCenterExclusion As Integer = 33
+    Private Const AadharSmallHeight As Integer = 692
 #End Region
 
 #Region "Other Events"
@@ -56,9 +60,11 @@ Public Class frm_Main
     Private Sub btn_Print_CardS_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print_CardS.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
-            Dim Point As Point = GetTopLeftCorner(Full)
-            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            Dim Point_Top As Point = GetTopLeftCorner(Full)
+            Dim Point_Bottom As Point = GetBottomLeftCorner(Full)
+            Dim Height As Single = Point_Bottom.Y - Point_Top.Y
+            Dim Front As Bitmap = Full.Clone(New Rectangle(Point_Top.X, Point_Top.Y + (Height - AadharSmallHeight), AadharPerSideWidth, AadharSmallHeight), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(Point_Top.X + AadharPerSideWidth + AadharCenterExclusion, Point_Top.Y + (Height - AadharSmallHeight), AadharPerSideWidth, AadharSmallHeight), Full.PixelFormat)
             PrepImage({Front, Back})
             Dim dlg As New frm_ReportViewer(New SmallCardS(New SingleSideItem(Front, Back)))
             dlg.Show()
@@ -72,10 +78,10 @@ Public Class frm_Main
             Dim Point_Top As Point = GetTopLeftCorner(Full)
             Dim Point_Bottom As Point = GetBottomLeftCorner(Full)
             Dim Height As Single = Point_Bottom.Y - Point_Top.Y
-            Dim Width As Single = 1012
+            Dim Width As Single = AadharPerSideWidth
             Dim Size As New Size(Width, Height)
             Dim Rect_Front As New Rectangle(Point_Top, Size)
-            Dim Rect_Back As New Rectangle(New Point(Point_Top.X + 1038, Point_Top.Y), Size)
+            Dim Rect_Back As New Rectangle(New Point(Point_Top.X + AadharPerSideWidth + AadharCenterExclusion, Point_Top.Y), Size)
 
             Dim Front As Bitmap = Full.Clone(Rect_Front, Full.PixelFormat)
             Dim Back As Bitmap = Full.Clone(Rect_Back, Full.PixelFormat)
@@ -141,9 +147,11 @@ Public Class frm_Main
     Private Sub btn_Print_CardD_ItemClick(sender As Object, e As ItemClickEventArgs) Handles btn_Print_CardD.ItemClick
         If view_PDF.IsDocumentOpened Then
             Dim Full As Bitmap = PrepImage(view_PDF.CreateBitmap(1, 3506))
-            Dim Point As Point = GetTopLeftCorner(Full)
-            Dim Front As Bitmap = Full.Clone(New Rectangle(Point.X, Point.Y + 1812, 1012, 672), Full.PixelFormat)
-            Dim Back As Bitmap = Full.Clone(New Rectangle(Point.X + 1038, Point.Y + 1812, 1012, 672), Full.PixelFormat)
+            Dim Point_Top As Point = GetTopLeftCorner(Full)
+            Dim Point_Bottom As Point = GetBottomLeftCorner(Full)
+            Dim Height As Single = Point_Bottom.Y - Point_Top.Y
+            Dim Front As Bitmap = Full.Clone(New Rectangle(Point_Top.X, Point_Top.Y + (Height - AadharSmallHeight), AadharPerSideWidth, AadharSmallHeight), Full.PixelFormat)
+            Dim Back As Bitmap = Full.Clone(New Rectangle(Point_Top.X + AadharPerSideWidth + AadharCenterExclusion, Point_Top.Y + (Height - AadharSmallHeight), AadharPerSideWidth, AadharSmallHeight), Full.PixelFormat)
             PrepImage({Front, Back})
             Dim dlg As New frm_ReportViewer(New SmallCardD(New DoubleSideItem(Front, Back)))
             dlg.Show()
@@ -191,7 +199,7 @@ Public Class frm_Main
         For x As Integer = 1 To Image.Width - 1
             For y As Integer = 1 To Image.Height - 1
                 Dim clr As Integer = Image.GetPixel(x, y).ToArgb
-                If clr = -11316397 Or clr = -7368817 Or clr = -16777216 Then Return New Point(x, y)
+                If clr = -11316397 Or clr = -7368817 Or clr = -16777216 Or clr = -3355444 Then Return New Point(x, y)
             Next
         Next
         Return New Point(0, 0)
