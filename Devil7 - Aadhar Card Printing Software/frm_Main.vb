@@ -10,6 +10,12 @@ Public Class frm_Main
     Private Const AadharPerSideWidth As Integer = 1091
     Private Const AadharCenterExclusion As Integer = 33
     Private Const AadharSmallHeight As Integer = 692
+
+    Private MaskingAreas As Rectangle() = {
+        New Rectangle(215, 1140, 35, 715), 'Downloaded & issue date in big card
+        New Rectangle(140, 2520, 35, 340), 'Downloaded date in small card left side
+        New Rectangle(1090, 2560, 35, 270) 'Issued date in small card right side
+        }
 #End Region
 
 #Region "Other Events"
@@ -188,10 +194,14 @@ Public Class frm_Main
 
 #Region "Subs"
     Function PrepImage(ByVal Image As Bitmap) As Bitmap
-        Dim G As Graphics = Graphics.FromImage(Image)
-        Dim Color As Color = Image.GetPixel(202, 758)
-        G.FillRectangle(New SolidBrush(Color), New Rectangle(202, 1010, 65, 710))
-        G.Dispose()
+        Dim Color As Color = Image.GetPixel(200, 1200) ' Get background color of Aadhar from any empty place within content area
+        Using G As Graphics = Graphics.FromImage(Image)
+            ' Mask all areas that has unwanted information
+            For Each Rectangle As Rectangle In MaskingAreas
+                G.FillRectangle(New SolidBrush(Color), Rectangle)
+            Next
+        End Using
+
         Return Image
     End Function
 
