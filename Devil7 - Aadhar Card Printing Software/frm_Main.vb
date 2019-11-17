@@ -188,18 +188,20 @@ Public Class frm_Main
     End Function
 
     Function GetTopLeftCorner(ByVal Image As Bitmap) As Point
-        For x As Integer = 10 To 250
-            For y As Integer = 10 To 400
-                If Image.GetPixel(x, y).ToArgb = -11316397 Then Return New Point(x, y)
+        For x As Integer = 1 To Image.Width - 1
+            For y As Integer = 1 To Image.Height - 1
+                Dim clr As Integer = Image.GetPixel(x, y).ToArgb
+                If clr = -11316397 Or clr = -7368817 Or clr = -16777216 Then Return New Point(x, y)
             Next
         Next
         Return New Point(0, 0)
     End Function
 
     Function GetBottomLeftCorner(ByVal Image As Bitmap) As Point
-        For x As Integer = 10 To 250
-            For y As Integer = Image.Height - 1 To 500 Step -1
-                If Image.GetPixel(x, y).ToArgb = -16777216 Then Return New Point(x, y)
+        For x As Integer = 1 To Image.Width - 1
+            For y As Integer = Image.Height - 1 To 1 Step -1
+                Dim clr As Integer = Image.GetPixel(x, y).ToArgb
+                If clr = -11316397 Or clr = -7368817 Or clr = -16777216 Then Return New Point(x, y)
             Next
         Next
         Return New Point(0, 0)
