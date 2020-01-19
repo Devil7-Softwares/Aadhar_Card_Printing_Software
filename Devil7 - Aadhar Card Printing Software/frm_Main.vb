@@ -195,6 +195,9 @@ Public Class frm_Main
 #Region "Subs"
     Function PrepImage(ByVal Image As Bitmap) As Bitmap
         Dim Color As Color = Image.GetPixel(200, 1200) ' Get background color of Aadhar from any empty place within content area
+#If DEBUG Then
+        Color = Color.FromArgb(100, Color.Red)
+#End If
         Using G As Graphics = Graphics.FromImage(Image)
             ' Mask all areas that has unwanted information
             For Each Rectangle As Rectangle In MaskingAreas
