@@ -12,9 +12,9 @@ Public Class frm_Main
     Private Const AadharSmallHeight As Integer = 692
 
     Private MaskingAreas As Rectangle() = {
-        New Rectangle(215, 1140, 35, 715), 'Downloaded & issue date in big card
-        New Rectangle(140, 2520, 35, 340), 'Downloaded date in small card left side
-        New Rectangle(1090, 2560, 35, 270) 'Issued date in small card right side
+        New Rectangle(230, 1180, 40, 715), 'Downloaded & issue date in big card
+        New Rectangle(150, 2560, 40, 340), 'Downloaded date in small card left side
+        New Rectangle(1100, 2600, 40, 280) 'Issued date in small card right side
         }
 #End Region
 
